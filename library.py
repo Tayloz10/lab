@@ -1,9 +1,9 @@
 import os
-os.open('books.txt', os.O_RDONLY)
+os.open('books.py', os.O_RDONLY)
 class Book:
     def __init__(self, title = "None", author = "None", publisher = " None", copyright = "None"):
         self.title = title
-        self.aurthor = author
+        self.author = author
         self.publisher = publisher
         self.copyright = copyright
     def __str__(self):
@@ -14,28 +14,27 @@ class Book:
         author = []
         publisher = []
         copyright = []
-        with open('books.txt', 'r') as file:
+        with open('books.py', 'r') as file:
+            books = file.read()
+            split_books = books.split('\n')
             i = 0
-            for line in file:
-                books = line.split('\n')
-                return books
-            while i < len(books()):
-                if i % 1 == 0:
-                    title.append(file[i])
+            while i < len(split_books()):
                 if i % 2 == 0:
-                    author.append(file[i])
+                        author.append(file[i])
                 if i % 3 == 0:
-                    publisher.append(file[i])
+                        publisher.append(file[i])
                 if i % 4 == 0:
-                    copyright.append(file[i])
-                i =+ 1
+                        copyright.append(file[i])
+                elif i % 1 == 0:
+                    title.append(file[i])
+                    i += 1
         print("The library has {} books" .format(i/4))
         j = 0
-        while j < ((len(books)/4)):
-            print("Title: {}" .format(title[i]))
-            print("Author: {}" .format(author[i]))
-            print("Publisher: {}" .format(publisher[i]))
-            print("Copyright: {}" .format(copyright[i]))
+        while j < ((len(split_books)/4)):
+            print("Title: {}" .format(title[j]))
+            print("Author: {}" .format(author[j]))
+            print("Publisher: {}" .format(publisher[j]))
+            print("Copyright: {}" .format(copyright[j]))
             print()
             j += 1
 
