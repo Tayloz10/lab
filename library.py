@@ -1,4 +1,4 @@
-import os
+
 class Book:
     def __init__(self, title = "None", author = "None", publisher = " None", copyright = "None"):
         self.title = title
@@ -15,7 +15,10 @@ class Book:
         copyright = []
         with open('books.txt', 'r') as file:
             i = 0
-            while i < len(file.split('\n')):
+            for line in file:
+                books = line.split('\n')
+                return books
+            while i < len(books()):
                 if i % 1 == 0:
                     title.append(file[i])
                 if i % 2 == 0:
@@ -27,7 +30,7 @@ class Book:
                 i =+ 1
         print("The library has {} books" .format(i/4))
         j = 0
-        while j < ((len(file.split('\n'))/4)):
+        while j < ((len(books)/4)):
             print("Title: {}" .format(title[i]))
             print("Author: {}" .format(author[i]))
             print("Publisher: {}" .format(publisher[i]))
