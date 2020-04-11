@@ -1,11 +1,12 @@
-
+import os
+os.open('books.txt', os.O_RDONLY)
 class Book:
     def __init__(self, title = "None", author = "None", publisher = " None", copyright = "None"):
         self.title = title
         self.aurthor = author
         self.publisher = publisher
         self.copyright = copyright
-    def __srt__(self):
+    def __str__(self):
         return ('Title {} \nAuthor {}\nPublisher {}\nCopyright {}' . format(self.title, self.author, self.publisher, self.copyright))
 
     def library():
